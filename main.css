@@ -2,12 +2,61 @@
 	animation: octocat-wave 560ms ease-in-out
 }
 
+body {
+  display: block;
+  background-color: #1e272e;
+  position: relative;
+  left: 25%;
+  margin-top: 5%;
+}
+
+#title {
+  display: inline-block;
+  font-size: 28px;
+  color: #2f3542;
+  border: 3px black invisible;
+  width: 50%;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: #70a1ff;
+  text-align: center;
+}
+
+#instructions {
+  display: inline-block;
+  font-size: 15px;
+  border: 2px gray invisible;
+  padding: 5px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  width: 50%;
+  color: #2f3542;
+  background-color: #f1f2f6;
+}
+
+#how {
+  margin-left: 2%;
+}
+
+#main {
+  border: 3px black invisible;
+  border-radius: 5px;
+  background-color: #dfe4ea;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  padding: 5px;
+}
+
 #password-length {
     width: 2em;
 }
 
 #random-password:before {
     content: "Random password: "
+}
+
+#random-password {
 }
 
 input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button {
