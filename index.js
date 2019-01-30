@@ -1,3 +1,12 @@
+function minmax(value, min, max) 
+{
+    if(parseInt(value) < min || isNaN(parseInt(value))) 
+        return 4; 
+    else if(parseInt(value) > max) 
+        return 99; 
+    else return value;
+}
+
 var passwordLength = document.getElementById("password-length");
 var repeatCharacters = document.getElementById("repeat-characters");
 var specialCharacters = document.getElementById("special-characters");

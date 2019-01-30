@@ -25,7 +25,7 @@
     <div id="error-message"></div>
     <div>
         <label for="password-length">Length of password: </label>
-        <input type="text" value="8" min="8" max="64" maxlength="2" id="password-length">
+        <input type="number" value="8" min="4" max="99" maxlength="2" id="password-length" onkeyup="this.value = minmax(this.value, 4, 99)">
     </div>
     <div>
         <label for="repeat-characters">Repeat characters</label>
