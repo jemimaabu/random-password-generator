@@ -84,3 +84,14 @@ input[type="number"] {
 		transform:rotate(10deg)
 	}
 }
+
+@media only screen and (max-width: 768px) {
+	body {
+		max-width: 768px;
+	}
+	#wrapper {
+		margin-left: 5%;
+		margin-right: 5%;
+		width: 150%;
+	}
+}
