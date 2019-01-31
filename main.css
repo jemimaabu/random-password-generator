@@ -1,13 +1,18 @@
 .github-corner:hover .octo-arm {
 	animation: octocat-wave 560ms ease-in-out
 }
-
 body {
   display: block;
   background-color: #1e272e;
   position: relative;
-  left: 25%;
   margin-top: 5%;
+	margin: 0 auto;
+	width: 100%;
+	align-content: center;
+}
+
+#wrapper {
+	margin-left: 30%;
 }
 
 #title {
@@ -63,7 +68,7 @@ input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-i
     -webkit-appearance: none;
     margin: 0;
 }
- 
+
 input[type="number"] {
     -moz-appearance: textfield;
 }
@@ -78,4 +83,4 @@ input[type="number"] {
 	40%, 80% {
 		transform:rotate(10deg)
 	}
-}  
+}
