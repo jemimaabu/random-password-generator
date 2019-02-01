@@ -12,15 +12,17 @@ body {
 }
 
 #wrapper {
-	margin-left: 5%;
+  width: calc(100% - 20px);
+  max-width: 420px;
+  margin: 0 auto;
+  padding: 0 10px;
 }
 
 #title {
   display: inline-block;
   font-size: 28px;
   color: #2f3542;
-  border: 3px black invisible;
-  width: 100%;
+  border: 3px solid black;
   padding: 5px;
   border-radius: 5px;
   background-color: #70a1ff;
@@ -30,11 +32,10 @@ body {
 #instructions {
   display: inline-block;
   font-size: 15px;
-  border: 2px gray invisible;
+  border: 2px solid gray;
   padding: 5px;
   margin-bottom: 15px;
   border-radius: 5px;
-  width: 100%;
   color: #2f3542;
   background-color: #f1f2f6;
 }
@@ -49,7 +50,6 @@ body {
   background-color: #dfe4ea;
   justify-content: center;
   align-items: center;
-  width: 100%;
   padding: 5px;
 }
 
@@ -73,6 +73,12 @@ input[type="number"] {
     -moz-appearance: textfield;
 }
 
+#error-message{
+     opacity: 0;
+      animation: fadeIn 1s forwards;
+      color: #D8000C;
+}
+
 @keyframes octocat-wave {
 	0%, 100% {
 		transform:rotate(0)
@@ -83,6 +89,11 @@ input[type="number"] {
 	40%, 80% {
 		transform:rotate(10deg)
 	}
+}
+
+@keyframes fadeIn {
+  from { opacity: 0 }
+  to { opacity: 1 }
 }
 
 @media only screen and (max-width: 768px) {
