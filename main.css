@@ -12,7 +12,7 @@ body {
 }
 
 #wrapper {
-	margin-left: 30%;
+	margin-left: 5%;
 }
 
 #title {
@@ -20,7 +20,7 @@ body {
   font-size: 28px;
   color: #2f3542;
   border: 3px black invisible;
-  width: 50%;
+  width: 100%;
   padding: 5px;
   border-radius: 5px;
   background-color: #70a1ff;
@@ -34,7 +34,7 @@ body {
   padding: 5px;
   margin-bottom: 15px;
   border-radius: 5px;
-  width: 50%;
+  width: 100%;
   color: #2f3542;
   background-color: #f1f2f6;
 }
@@ -49,7 +49,7 @@ body {
   background-color: #dfe4ea;
   justify-content: center;
   align-items: center;
-  width: 50%;
+  width: 100%;
   padding: 5px;
 }
 
@@ -90,8 +90,9 @@ input[type="number"] {
 		max-width: 768px;
 	}
 	#wrapper {
-		margin-left: 5%;
+		display: inline-block;
+		margin-left: 4%;
 		margin-right: 5%;
-		width: 150%;
+		width: 90%;
 	}
 }
