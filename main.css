@@ -87,10 +87,8 @@ input[type="number"] {
 
 #error-message{
      opacity: 0;
-     animation: fadeIn 1s forwards;
-}
-  color: #D8000C;
-  animation: fadeIn 5s;
+      animation: fadeIn 1s forwards;
+      color: #D8000C;
 }
 @keyframes fadeIn {
   from { opacity: 0 }
