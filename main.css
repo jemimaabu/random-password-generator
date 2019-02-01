@@ -84,3 +84,12 @@ input[type="number"] {
 		transform:rotate(10deg)
 	}
 }
+
+#error-message{
+  color: #D8000C;
+  animation: fadeIn 5s;
+}
+@keyframes fadeIn {
+  from { opacity: 0 }
+  to { opacity: 1 }
+}
