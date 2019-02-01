@@ -12,7 +12,10 @@ body {
 }
 
 #wrapper {
-	margin-left: 30%;
+  width: calc(100% - 20px);
+  max-width: 420px;
+  margin: 0 auto;
+  padding: 0 10px;
 }
 
 #title {
@@ -20,7 +23,6 @@ body {
   font-size: 28px;
   color: #2f3542;
   border: 3px black invisible;
-  width: 50%;
   padding: 5px;
   border-radius: 5px;
   background-color: #70a1ff;
@@ -34,7 +36,6 @@ body {
   padding: 5px;
   margin-bottom: 15px;
   border-radius: 5px;
-  width: 50%;
   color: #2f3542;
   background-color: #f1f2f6;
 }
@@ -49,7 +50,6 @@ body {
   background-color: #dfe4ea;
   justify-content: center;
   align-items: center;
-  width: 50%;
   padding: 5px;
 }
 
