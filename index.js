@@ -1,10 +1,22 @@
 function minmax(value, min, max) 
 {
-    if(parseInt(value) < min || isNaN(parseInt(value))) 
-        return 4; 
-    else if(parseInt(value) > max) 
-        return 99; 
-    else return value;
+    if (value.indexOf('.') > -1)
+    {
+       if (value === ".") return; //We're only interested in whole numbers, so we'll disallow this.  A dot can't be in the first position.
+       return  value.split('.')[0];
+    }
+    if (value.length < 2) return value; //We can't yet be sure the number is less than min.
+
+    const parsedInput = parseInt(value);
+
+    if (parsedInput >= min && parsedInput <= max)
+        return value;
+    else if(parsedInput < min)
+        return min;
+
+    else if(parsedInput > max)
+        return max;
+    return value;
 }
 
 var passwordLength = document.getElementById("password-length");
@@ -20,11 +32,14 @@ var defaultCharacters = ["@", "%", "+", "'", "!", "#", "$", "^", "?", ":", ".", 
 var characters = [];
 var passwordArray = [];
 
+const MIN =4;
+const MAX = 99;
 
 function generatePassword() {
     randomPassword.innerHTML = "";
     passwordArray=[];
     characters = defaultCharacters;
+    passwordLength.value = minmax(passwordLength.value, MIN, MAX); //Final validation in case something is wrong.
     if (!specialCharacters.checked) {
         characters = characters.join("").replace(/[@%+'!#$^?:.~]/g,'').split('')
     } 
@@ -61,3 +76,6 @@ function generatePassword() {
     }
     randomPassword.innerHTML = passwordArray.join("");
 }
+
+function getMin() {return MIN;}
+function getMax () {return MAX;}
