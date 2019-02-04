@@ -10,12 +10,13 @@ function minmax(value, min, max)
 var passwordLength = document.getElementById("password-length");
 var repeatCharacters = document.getElementById("repeat-characters");
 var specialCharacters = document.getElementById("special-characters");
+var ambiguousCharacters = document.getElementById("ambiguous-characters");
 var includeNumbers = document.getElementById("include-numbers");
 var includeLetters = document.getElementById("include-letters");
 var randomPassword = document.getElementById("random-password");
 var errorMessage = document.getElementById("error-message");
 
-var defaultCharacters = ["&", "/", "\\", "#", ",", "+", "(", ")", "$", "~", "%", ".", "'", ":", "*", "?", "<", ">", "/", "{", "}", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z","A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", 0,1,2,3,4,5,6,7,8,9]
+var defaultCharacters = ["@", "%", "+", "'", "!", "#", "$", "^", "?", ":", ".", "~", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z","A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", 0,1,2,3,4,5,6,7,8,9]
 var characters = [];
 var passwordArray = [];
 
@@ -25,7 +26,7 @@ function generatePassword() {
     passwordArray=[];
     characters = defaultCharacters;
     if (!specialCharacters.checked) {
-        characters = characters.join("").replace(/[&\/\\#,+()$~%.':*?<>{}]/g,'').split('')
+        characters = characters.join("").replace(/[@%+'!#$^?:.~]/g,'').split('')
     } 
     if (!includeNumbers.checked) {
         characters = characters.join("").replace(/[0-9]/g,'').split('')
@@ -33,7 +34,9 @@ function generatePassword() {
     if (!includeLetters.checked) {
         characters = characters.join("").replace(/[a-zA-Z]/g,'').split('')
     }
-    console.log(!specialCharacters.checked && !includeNumbers.checked && !includeLetters.checked);
+    if (!ambiguousCharacters.checked) {
+        characters = characters.join("").replace(/[1Ilo0]/g,'').split('')
+    }
     if (!specialCharacters.checked && !includeNumbers.checked && !includeLetters.checked) {
         errorMessage.innerHTML = "Alas, blank passwords aren't a thing yet."
     }
@@ -43,7 +46,9 @@ function generatePassword() {
         } else {
             while (passwordArray.length < passwordLength.value) {
                 var randomIndex = Math.floor(Math.random()*characters.length);
-                if(passwordArray.indexOf(characters[randomIndex]) === -1) {
+                var newChar = characters[randomIndex];
+                newChar = isNaN(newChar) ? newChar.toLowerCase() : newChar;
+                if (passwordArray.indexOf(newChar) === -1) {
                     passwordArray.push(characters[randomIndex]);
                 }
             }

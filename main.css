@@ -1,39 +1,41 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #1e272e;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+
 .github-corner:hover .octo-arm {
 	animation: octocat-wave 560ms ease-in-out
 }
-body {
-  display: block;
-  background-color: #1e272e;
-  position: relative;
-  margin-top: 5%;
-	margin: 0 auto;
-	width: 100%;
-	align-content: center;
-}
-
-#wrapper {
-  width: calc(100% - 20px);
-  max-width: 420px;
-  margin: 0 auto;
-  padding: 0 10px;
-}
 
 #title {
-  display: inline-block;
   font-size: 28px;
   color: #2f3542;
   border: 3px solid black;
-  padding: 5px;
+  padding: .2em;
   border-radius: 5px;
   background-color: #70a1ff;
   text-align: center;
+  margin-top: 0;
+}
+
+#wrapper {
+  position: relative;
+}
+
+aside {
+  width: 33.5%;
+  position: absolute;
+  height: 85vh;
+  right: 0;
 }
 
 #instructions {
-  display: inline-block;
-  font-size: 15px;
   border: 2px solid gray;
-  padding: 5px;
+  padding: 1em;
   margin-bottom: 15px;
   border-radius: 5px;
   color: #2f3542;
@@ -41,27 +43,35 @@ body {
 }
 
 #how {
-  margin-left: 2%;
+  margin: 0;
 }
 
-#main {
-  border: 3px black invisible;
+#instructions li {
+  margin-bottom: 1em
+}
+
+main {
   border-radius: 5px;
   background-color: #dfe4ea;
-  justify-content: center;
-  align-items: center;
-  padding: 5px;
+  padding: 1em;
+  border-radius: 5px;
+  background-color: #dfe4ea;
+  padding: 1em;
+  width: 65%;
+}
+
+main div {
+  margin: 0.5em 0;
 }
 
 #password-length {
     width: 2em;
 }
 
-#random-password:before {
-    content: "Random password: "
-}
-
 #random-password {
+  background-color: white;
+  padding: 1em;
+  word-break: break-all;
 }
 
 input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button {
@@ -97,13 +107,13 @@ input[type="number"] {
 }
 
 @media only screen and (max-width: 768px) {
-	body {
-		max-width: 768px;
-	}
-	#wrapper {
-		display: inline-block;
-		margin-left: 4%;
-		margin-right: 5%;
-		width: 90%;
-	}
+	aside {
+    position: relative;
+    height: auto;
+    width: 100%;
+  }
+
+  main {
+    width: 100%;
+  }
 }
