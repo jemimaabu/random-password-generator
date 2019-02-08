@@ -1,9 +1,9 @@
-function minmax(value, min, max) 
+function minmax(value, min, max)
 {
-    if(parseInt(value) < min || isNaN(parseInt(value))) 
-        return 4; 
-    else if(parseInt(value) > max) 
-        return 99; 
+    if(parseInt(value) < min || isNaN(parseInt(value)))
+        return 4;
+    else if(parseInt(value) > max)
+        return 99;
     else return value;
 }
 
@@ -14,6 +14,7 @@ var includeNumbers = document.getElementById("include-numbers");
 var includeLetters = document.getElementById("include-letters");
 var randomPassword = document.getElementById("random-password");
 var errorMessage = document.getElementById("error-message");
+var pass = randomPassword.innerHTML;
 
 var defaultCharacters = ["&", "/", "\\", "#", ",", "+", "(", ")", "$", "~", "%", ".", "'", ":", "*", "?", "<", ">", "/", "{", "}", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z","A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", 0,1,2,3,4,5,6,7,8,9]
 var characters = [];
@@ -26,10 +27,10 @@ function generatePassword() {
     characters = defaultCharacters;
     if (!specialCharacters.checked) {
         characters = characters.join("").replace(/[&\/\\#,+()$~%.':*?<>{}]/g,'').split('')
-    } 
+    }
     if (!includeNumbers.checked) {
         characters = characters.join("").replace(/[0-9]/g,'').split('')
-    } 
+    }
     if (!includeLetters.checked) {
         characters = characters.join("").replace(/[a-zA-Z]/g,'').split('')
     }
@@ -50,9 +51,25 @@ function generatePassword() {
         }
     } else {
         for (var i = 0; i < passwordLength.value; i++) {
-            var randomIndex = Math.floor(Math.random()*characters.length); 
+            var randomIndex = Math.floor(Math.random()*characters.length);
             passwordArray.push(characters[randomIndex])
         }
     }
     randomPassword.innerHTML = passwordArray.join("");
 }
+
+//function copies the created password to the clipboard
+function copyToClip(){
+	var value = document.getElementById("random-password").innerHTML;
+	var input_temp = document.createElement("input");
+	input_temp.value = value;
+	document.body.appendChild(input_temp);
+	input_temp.select();
+	document.execCommand("copy");
+	document.body.removeChild(input_temp);
+
+	alert("Password copied!");
+}
+
+
+
