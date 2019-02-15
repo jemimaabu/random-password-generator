@@ -1,9 +1,9 @@
-function minmax(value, min, max) 
+function minmax(value, min, max)
 {
-    if(parseInt(value) < min || isNaN(parseInt(value))) 
-        return 4; 
-    else if(parseInt(value) > max) 
-        return 99; 
+    if(parseInt(value) < min || isNaN(parseInt(value)))
+        return 4;
+    else if(parseInt(value) > max)
+        return 99;
     else return value;
 }
 
@@ -26,10 +26,10 @@ function generatePassword() {
     characters = defaultCharacters;
     if (!specialCharacters.checked) {
         characters = characters.join("").replace(/[&\/\\#,+()$~%.':*?<>{}]/g,'').split('')
-    } 
+    }
     if (!includeNumbers.checked) {
         characters = characters.join("").replace(/[0-9]/g,'').split('')
-    } 
+    }
     if (!includeLetters.checked) {
         characters = characters.join("").replace(/[a-zA-Z]/g,'').split('')
     }
@@ -50,9 +50,23 @@ function generatePassword() {
         }
     } else {
         for (var i = 0; i < passwordLength.value; i++) {
-            var randomIndex = Math.floor(Math.random()*characters.length); 
+            var randomIndex = Math.floor(Math.random()*characters.length);
             passwordArray.push(characters[randomIndex])
         }
     }
     randomPassword.innerHTML = passwordArray.join("");
+	console.log(randomPassword);
+}
+
+//function copies the created password to clipboard
+function copyToClip() {
+	var value = document.getElementById("random-password").innerHTML;
+	var input_temp = document.createElement("input");
+	input_temp.value = value;
+	document.body.appendChild(input_temp);
+	input_temp.select();
+	document.execCommand("copy");
+	document.body.removeChild(input_temp);
+
+	alert("Password copied!");
 }
