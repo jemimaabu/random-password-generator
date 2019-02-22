@@ -91,3 +91,13 @@ function generatePassword() {
 
 function getMin() {return MIN;}
 function getMax () {return MAX;}
+
+// TOOGLE HOW TO USE
+let openInstructions = document.getElementById('instructions__header');
+let arrow = document.querySelector('.fas');
+
+openInstructions.addEventListener('click', () => { 
+    openInstructions.parentNode.classList.contains('active') ? 
+    (openInstructions.parentNode.classList.remove('active'), arrow.classList.remove('fa-angle-up'), arrow.classList.add('fa-angle-down') ) :  
+    (openInstructions.parentNode.classList.add('active'), arrow.classList.remove('fa-angle-down'), arrow.classList.add('fa-angle-up'))
+});

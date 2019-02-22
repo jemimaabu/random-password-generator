@@ -35,11 +35,34 @@ aside {
 
 #instructions {
   border: 2px solid gray;
-  padding: 1em;
   margin-bottom: 15px;
   border-radius: 5px;
   color: #2f3542;
   background-color: #f1f2f6;
+  max-height: 55px;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out
+}
+
+#instructions.active {
+  height: auto;
+  max-height: 500px;
+}
+
+#instructions__header {
+  padding: 1em;
+  cursor: pointer;
+  border-bottom: 1px solid #2f3542;
+  display: flex;
+  justify-content: space-between;
+}
+
+#instructions__content {
+  padding: 0 2em 1em 2em;
+}
+
+#instructions__content ul {
+  padding: 0;
 }
 
 #how {
