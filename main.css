@@ -3,7 +3,7 @@
 }
 
 body {
-  background-color: #1e272e;
+  background-color: #81a9c9;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
 
@@ -13,11 +13,11 @@ body {
 
 #title {
   font-size: 28px;
-  color: #2f3542;
-  border: 3px solid black;
+  color:greenyellow;
+  border: 3px solid lightslategray;
   padding: .2em;
   border-radius: 5px;
-  background-color: #70a1ff;
+  background-color: darkorchid;
   text-align: center;
   margin-top: 0;
 }
@@ -91,7 +91,7 @@ background-color: rgb(145, 182, 251);
 
 
 #random-password {
-  background-color: white;
+  background-color: powderblue;
   padding: 1em;
   word-break: break-all;
 }
