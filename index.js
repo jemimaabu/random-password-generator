@@ -1,4 +1,4 @@
-function minmax(value, min, max) 
+function minmax(value, min, max)
 {
     if (value.indexOf('.') > -1)
     {
@@ -45,10 +45,10 @@ function generatePassword() {
 
         if (!specialCharacters.checked) {
         characters = characters.join("").replace(/[@%+'!#$^?:.~]/g,'').split('')
-    } 
+    }
     if (!includeNumbers.checked) {
         characters = characters.join("").replace(/[0-9]/g,'').split('')
-    } 
+    }
     if (!includeLetters.checked) {
         characters = characters.join("").replace(/[a-zA-Z]/g,'').split('')
     }
@@ -71,6 +71,7 @@ function generatePassword() {
             errorMessage.innerHTML = "There are only so many characters, we're going to have to repeat something"
             return;
         } else {
+          errorMessage.innerHTML = ""
             while (passwordArray.length < passwordLength.value) {
                 var randomIndex = Math.floor(Math.random()*characters.length);
                 var newChar = characters[randomIndex];
@@ -81,8 +82,9 @@ function generatePassword() {
             }
         }
     } else {
+      errorMessage.innerHTML = ""
         for (var i = 0; i < passwordLength.value; i++) {
-            var randomIndex = Math.floor(Math.random()*characters.length); 
+            var randomIndex = Math.floor(Math.random()*characters.length);
             passwordArray.push(characters[randomIndex])
         }
     }
