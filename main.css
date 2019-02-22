@@ -65,8 +65,30 @@ main div {
 }
 
 #password-length {
-    width: 2em;
+    width: 5em;
+    padding: .2rem;
+    text-align: center;
+    font-size: .8em;
+    border: none;
+    border-radius: 5px;
 }
+
+.gene-pass-button{
+  background-color: #70A1FF;
+  font-size: 1rem;
+  border: none;
+  padding: 5px 15px;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+  -webkit-transition: 0.2s;
+  -o-transition: 0.2s;
+  transition: 0.2s;
+}
+.gene-pass-button:hover{
+background-color: rgb(145, 182, 251);
+}
+
 
 #random-password {
   background-color: white;
