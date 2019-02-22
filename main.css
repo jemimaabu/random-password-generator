@@ -3,7 +3,7 @@
 }
 
 body {
-  background-color: #81a9c9;
+  background-color: #1e272e;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
 
@@ -13,11 +13,11 @@ body {
 
 #title {
   font-size: 28px;
-  color:greenyellow;
+  color:2f3542;
   border: 3px solid lightslategray;
   padding: .2em;
   border-radius: 5px;
-  background-color: darkorchid;
+  background-color: #70a1ff;
   text-align: center;
   margin-top: 0;
 }
@@ -74,9 +74,7 @@ aside {
 }
 
 main {
-  border-radius: 5px;
-  background-color: #dfe4ea;
-  padding: 1em;
+  border: 2px solid gray;
   border-radius: 5px;
   background-color: #dfe4ea;
   padding: 1em;
@@ -88,12 +86,12 @@ main div {
 }
 
 #password-length {
-    width: 5em;
-    padding: .2rem;
-    text-align: center;
-    font-size: .8em;
-    border: none;
-    border-radius: 5px;
+  width: 5em;
+  padding: .2rem;
+  text-align: center;
+  font-size: .8em;
+  border: none;
+  border-radius: 5px;
 }
 
 .gene-pass-button{
@@ -108,10 +106,10 @@ main div {
   -o-transition: 0.2s;
   transition: 0.2s;
 }
-.gene-pass-button:hover{
-background-color: rgb(145, 182, 251);
-}
 
+.gene-pass-button:hover{
+  background-color: rgb(145, 182, 251);
+}
 
 #random-password {
   background-color: powderblue;
@@ -120,18 +118,18 @@ background-color: rgb(145, 182, 251);
 }
 
 input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 input[type="number"] {
-    -moz-appearance: textfield;
+  -moz-appearance: textfield;
 }
 
 #error-message{
-     opacity: 0;
-      animation: fadeIn 1s forwards;
-      color: #D8000C;
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+  color: #D8000C;
 }
 
 @keyframes octocat-wave {
