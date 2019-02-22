@@ -6,6 +6,9 @@
     <title>Random Password Generator</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="A webpage that generates random passwords">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+
+
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
 </head>
 <body>
@@ -14,7 +17,11 @@
     <div id="wrapper">
         <aside id="sidebar">
             <div id="instructions">
-                <h4 id="how">How To Use:</h4>
+                <div id="instructions__header">
+                    <h4 id="how">How To Use:</h4>
+                    <i class="fas fa-angle-down"></i>
+                </div>
+                <div id="instructions__content">
                 <ul>
                     <li>Type in password length.</li>
                     <li>Select type of password required by checking the appropriate boxes.<br>(Only select 'Include numbers' to generate a PIN number)</li>
@@ -22,6 +29,7 @@
                 </ul>
                 <p>All passwords are generated on your browser, so nothing is stored online.</p>
                 <p>You're the only one who has knowledge of the generated password.</p>
+            </div>
             </div>
         </aside>
         <main>
