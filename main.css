@@ -94,21 +94,30 @@ main div {
   border-radius: 5px;
 }
 
-.gene-pass-button{
-  background-color: #70A1FF;
+.button{
   font-size: 1rem;
   border: none;
   padding: 5px 15px;
   border-radius: 4px;
-  color: #fff;
   cursor: pointer;
   -webkit-transition: 0.2s;
   -o-transition: 0.2s;
   transition: 0.2s;
 }
 
-.gene-pass-button:hover{
-  background-color: rgb(145, 182, 251);
+.button.generate {
+  background-color: #70A1FF;
+  color: #fff;
+}
+.button.generate:hover{
+  background-color: #91b6fb;
+}
+.button.copy {
+  background-color: powderblue;
+  color: black;
+}
+.button.copy:hover{
+  background-color: #b6e4eb;
 }
 
 #random-password {

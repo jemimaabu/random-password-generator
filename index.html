@@ -37,7 +37,7 @@
                 <div id="error-message"></div>
                 <div>
                     <label for="password-length">Length of password: </label>
-                    <input type="number" value="8" min="4" max="99" maxlength="2" id="password-length" step="1" onkeyup="this.value = minmax(this.value, getMin(), getMax())">
+                    <input type="number" value="8" min="4" max="256" maxlength="3" id="password-length" step="1" onkeyup="this.value = minmax(this.value, getMin(), getMax())">
                 </div>
                 <div>
                     <label for="repeat-characters">Repeat characters</label>
@@ -59,12 +59,12 @@
                     <label for="include-letters">Include letters</label>
                     <input type="checkbox" checked id="include-letters">
                 </div>
-                <button class="gene-pass-button" type="button" onclick="generatePassword()">Generate password</button>
+                <button class="generate button" type="button" onclick="generatePassword()">Generate password</button>
                 <div id="random-password-container">
                     Random password: 
                     <div id="random-password"></div>
                 </div>
-                <button type="button" onClick="copyToClip()"> Copy to Clipboard </button>
+                <button class="copy button" type ="button" onClick="copyToClip()"> Copy to Clipboard </button>
             </div>
         </main>
     </div>

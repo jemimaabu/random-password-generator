@@ -32,8 +32,8 @@ var defaultCharacters = ["@", "%", "+", "'", "!", "#", "$", "^", "?", ":", ".", 
 var characters = [];
 var passwordArray = [];
 
-const MIN =4;
-const MAX = 99;
+const MIN = 4;
+const MAX = 256;
 
 function generatePassword() {
     randomPassword.innerHTML = "";
@@ -87,7 +87,6 @@ function generatePassword() {
         }
     }
     randomPassword.innerHTML = passwordArray.join("");
-	console.log(randomPassword);
 }
 
 //function copies the created password to clipboard
