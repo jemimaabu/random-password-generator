@@ -3,7 +3,7 @@
 ## A webpage that generates a random password. 
 
 # How To Use
-1. Type in password length
+1. Type in password length.
 2. Select type of password required (can also generate pins if you select only Numbers)
 3. Generate password.
 
