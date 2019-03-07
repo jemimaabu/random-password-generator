@@ -114,3 +114,97 @@ openInstructions.addEventListener('click', () => {
     (openInstructions.parentNode.classList.remove('active'), arrow.classList.remove('fa-angle-up'), arrow.classList.add('fa-angle-down') ) :  
     (openInstructions.parentNode.classList.add('active'), arrow.classList.remove('fa-angle-down'), arrow.classList.add('fa-angle-up'))
 });
+
+var passwordTest = document.getElementById("password-test");
+
+function passwordScore() {
+    var value = passwordTest.value.trim();
+    var score = 0;
+    if (value.length < 8 ) {
+        score = 0;
+    } else {
+        if (value.length > 8) {
+            score++
+        }
+        if (/\d/.test(value)) {
+            score++
+        }
+        if (/[!@#$%^&*()_+\-=\[\]{};':"\|\,.<>\?]/.test(value)) {
+            score++
+        }
+        if (/[A-Z]/.test(value)) {
+            score++
+        }
+        if (value.length > 24) {
+            score++
+        }
+    }
+    return score;
+}
+
+var passwordIndicator = document.getElementById("password-indicator");
+var passwordStrength = document.getElementById("password-strength");
+
+function indicator() {
+    if (passwordTest.value.trim().length < 1) {
+        passwordIndicator.className="";
+        passwordStrength.innerHTML = "";
+    } else {
+        var score = passwordScore();
+        console.log(score);
+        switch (score) {
+            case 0:
+                passwordIndicator.className="weak";
+                passwordStrength.innerHTML = "Weak";
+                break;
+            case 1:
+                passwordIndicator.className="average";
+                passwordStrength.innerHTML = "Average";
+                break;
+            case 2:
+                passwordIndicator.className="good";
+                passwordStrength.innerHTML = "Good";
+                break;
+            case 3:
+                passwordIndicator.className="strong";
+                passwordStrength.innerHTML = "Strong";
+                break;
+            case 4:
+                passwordIndicator.className="strong";
+                passwordStrength.innerHTML = "Strong";
+                break;
+            default:
+                passwordIndicator.className="";
+                passwordStrength.innerHTML = "";
+                break;
+        }
+    }
+}
+
+passwordTest.onkeyup = function() {
+    indicator();
+}
+
+var passwordToggle = document.getElementById("password-toggle");
+
+function togglePassword() {
+    if (passwordTest.value.trim().length < 1 ) {
+        return
+    } else {
+        if (passwordTest.type === "text") {
+            passwordToggle.innerHTML="show";
+            passwordTest.type = "password";
+        } else if (passwordTest.type === "password") {
+            passwordToggle.innerHTML="hide";
+            passwordTest.type = "text";
+        }
+    }
+}
+
+passwordToggle.onclick = function() {
+    togglePassword();
+}
+
+function strengthenPassword() {
+    var value = passwordTest.value.trim();
+}

@@ -74,10 +74,6 @@ aside {
 }
 
 main {
-  border: 2px solid gray;
-  border-radius: 5px;
-  background-color: #dfe4ea;
-  padding: 1em;
   width: 65%;
 }
 
@@ -120,6 +116,13 @@ main div {
   background-color: #b6e4eb;
 }
 
+#random-password-container {
+  border: 2px solid gray;
+  border-radius: 5px;
+  background-color: #dfe4ea;
+  padding: 1em;
+}
+
 #random-password {
   background-color: powderblue;
   padding: 1em;
@@ -139,6 +142,58 @@ input[type="number"] {
   opacity: 0;
   animation: fadeIn 1s forwards;
   color: #D8000C;
+}
+
+#password-strength-container {
+  border: 2px solid gray;
+  border-radius: 5px;
+  background-color: #dfe4ea;
+  padding: 1em;
+}
+
+#password-strength-container .input-container {
+  position: relative;
+}
+
+#password-test {
+  width: 100%;
+  border-radius: 5px;
+  border: 2px solid gray;
+  padding: 0.5em;
+  outline: none;
+}
+
+#password-indicator {
+  width: 100%;
+  padding: 2px;
+  border-radius: 5px;
+  background: white;
+}
+
+#password-indicator.weak {
+  background: linear-gradient(to right, #ff0000 25%, #fff 25%);
+}
+
+#password-indicator.average {
+  background: linear-gradient(to right,#ff9900 50%,#fff 50%);
+}
+
+#password-indicator.good {
+  background: linear-gradient(to right,#70A1FF 75%, #fff 75%);
+}
+
+#password-indicator.strong {
+  background: linear-gradient(to right, #43f04c 100%, #43f04c 100%);
+}
+
+#password-toggle {
+  font-size: .8em;
+  float: right;
+  position: absolute;
+  right: 0.5em;
+  top: 0.75em;
+  color: #70A1FF;
+  cursor: pointer;
 }
 
 @keyframes octocat-wave {

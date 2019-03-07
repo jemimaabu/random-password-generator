@@ -6,9 +6,6 @@
     <title>Random Password Generator</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="A webpage that generates random passwords">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
-
-
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
 </head>
 <body>
@@ -35,36 +32,46 @@
         <main>
             <div id="random-password-container">
                 <div id="error-message"></div>
-                <div>
+                <div class="input-container">
                     <label for="password-length">Length of password: </label>
                     <input type="number" value="8" min="4" max="256" maxlength="3" id="password-length" step="1" onkeyup="this.value = minmax(this.value, getMin(), getMax())">
                 </div>
-                <div>
+                <div class="input-container">
                     <label for="repeat-characters">Repeat characters</label>
                     <input type="checkbox" checked id="repeat-characters">
                 </div>
-                <div>
+                <div class="input-container">
                     <label for="special-characters">Use special characters</label>
                     <input type="checkbox" checked id="special-characters">
                 </div>
-                <div>
+                <div class="input-container">
                     <label for="ambiguous-characters">Include ambiguous characters ("l, I, 1, 0, o")</label>
                     <input type="checkbox" checked id="ambiguous-characters">
                 </div>
-                <div>
+                <div class="input-container">
                     <label for="include-numbers">Include numbers</label>
                     <input type="checkbox" checked id="include-numbers">
                 </div>
-                <div>
+                <div class="input-container">
                     <label for="include-letters">Include letters</label>
                     <input type="checkbox" checked id="include-letters">
                 </div>
                 <button class="generate button" type="button" onclick="generatePassword()">Generate password</button>
-                <div id="random-password-container">
+                <div class="input-container">
                     Random password: 
                     <div id="random-password"></div>
                 </div>
                 <button class="copy button" type ="button" onClick="copyToClip()"> Copy to Clipboard </button>
+            </div>
+            <div id="password-strength-container">
+                <div class="input-container">
+                    <input type="password" id="password-test" placeholder="Type password here"><span id="password-toggle">show</span>
+                    <div id="password-indicator"></div>
+                    <div id="password-strength-text">
+                        Password strength: <span id="password-strength"></span>
+                    </div>
+                </div>
+                <button class="strengthen button" type ="button" onClick="strengthenPassword()"> Strengthen Password </button>
             </div>
         </main>
     </div>
