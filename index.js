@@ -205,6 +205,6 @@ passwordToggle.onclick = function() {
     togglePassword();
 }
 
-function strengthenPassword() {
-    var value = passwordTest.value.trim();
-}
+//function strengthenPassword() {
+//    var value = passwordTest.value.trim();
+//}
