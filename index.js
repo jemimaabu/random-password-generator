@@ -116,6 +116,7 @@ openInstructions.addEventListener('click', () => {
 });
 
 var passwordTest = document.getElementById("password-test");
+passwordTest.addEventListener("change", indicator);
 
 function passwordScore() {
     var value = passwordTest.value.trim();
