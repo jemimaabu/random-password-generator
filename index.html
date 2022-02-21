@@ -62,7 +62,11 @@
                     <div id="random-password"></div>
                 </div>
                 <button class="copy button" type ="button" onClick="copyToClip()"> Copy to Clipboard </button>
+                <button class="download button" type="button" onClick="downloadPassword()">
+                    Download Password
+                </button>
             </div>
+            
             <div id="password-strength-container">
                 <div class="input-container">
                     <input type="password" id="password-test" placeholder="Type password here"><span id="password-toggle">show</span>
@@ -77,4 +81,6 @@
     </div>
 </body>
 <script src="index.js"></script>
+<!-- parallax/jsPDF -->
+<script src="https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js"></script>
 </html>
