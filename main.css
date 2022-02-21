@@ -224,3 +224,11 @@ input[type="number"] {
     width: 100%;
   }
 }
+
+.button.download {
+  background-color: powderblue;
+  color: black;
+}
+.button.download:hover {
+  background-color: #b6e4eb;
+}
