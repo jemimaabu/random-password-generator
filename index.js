@@ -208,3 +208,26 @@ passwordToggle.onclick = function() {
 //function strengthenPassword() {
 //    var value = passwordTest.value.trim();
 //}
+
+
+// use of jsPDF to generate a .pdf file with the
+// generated password
+function downloadPassword() {
+  window.jsPDF = window.jspdf.jsPDF;
+  var generatedPass = document.getElementById("random-password").innerHTML;
+  var pdfGenerator = new jsPDF();
+
+  if (generatedPass === "" || generatedPass === undefined) {
+    alert("Please Generate a Password!");
+  } else {
+    try {
+      pdfGenerator.setFontSize(12);
+      pdfGenerator.text("The generated password is:", 20, 20);
+      pdfGenerator.setFont("undefined", "bold");
+      pdfGenerator.text(generatedPass, 20, 30);
+      pdfGenerator.save("password.pdf");
+    } catch (err) {
+      alert("AN ERROR OCCURRED!");
+    }
+  }
+}
